@@ -195,6 +195,7 @@ function Todo() {
       const result = await fetchData.json();
       newList.push(result);
       setTodo(newList);
+      setTempText('');
     } catch (error) {
       return null;
     }
