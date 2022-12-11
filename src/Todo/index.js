@@ -148,6 +148,8 @@ function Todo() {
   const deleteTodo = async index => {
     const newList = [...todo];
     const listToDelete = newList[index];
+    newList.splice(index, 1);
+    setTodo(newList);
     try {
       const fetchData = await fetch(`https://pre-onboarding-selection-task.shop/todos/${listToDelete.id}`, {
         method: 'DELETE',
@@ -166,6 +168,7 @@ function Todo() {
     const newTodoList = [...todo];
     const listToChange = newTodoList[index];
     listToChange.isCompleted = !listToChange.isCompleted;
+    setTodo(newTodoList);
     try {
       const fetchData = await fetch(`https://pre-onboarding-selection-task.shop/todos/${listToChange.id}`, {
         method: 'PUT',
