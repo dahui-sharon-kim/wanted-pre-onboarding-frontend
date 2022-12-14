@@ -124,7 +124,7 @@ function Todo() {
     setEdit(newEditArray);
   };
 
-  const updateTodoContent = async (index, editEnabled) => {
+  const TodoContent = async (index, editEnabled) => {
     const newTodo = [...todo];
     const newEditArray = [...edit];
     const listToUpdate = newTodo[index];
@@ -273,7 +273,7 @@ function Todo() {
                 />
               )}
               {edit[index] ?
-                <AiOutlineCheck style={IconStyleSmall} onClick={() => updateTodoContent(index, !edit[index])} /> :
+                <AiOutlineCheck style={IconStyleSmall} onClick={() => Edit(index, !edit[index])} /> :
                 <FiEdit style={IconStyleSmall} onClick={() => Edit(index, !edit[index])} />
               }
               <BsTrash style={IconStyleSmall} onClick={() => deleteTodo(index)} />
