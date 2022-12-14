@@ -273,7 +273,7 @@ function Todo() {
                 />
               )}
               {edit[index] ?
-                <AiOutlineCheck style={IconStyleSmall} onClick={() => Edit(index, !edit[index])} /> :
+                <AiOutlineCheck style={IconStyleSmall} onClick={() => TodoContent(index, !edit[index])} /> :
                 <FiEdit style={IconStyleSmall} onClick={() => Edit(index, !edit[index])} />
               }
               <BsTrash style={IconStyleSmall} onClick={() => deleteTodo(index)} />
